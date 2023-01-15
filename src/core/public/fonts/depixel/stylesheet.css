@@ -1,0 +1,156 @@
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Bold.eot');
+    src: url('DePixel-Bold.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Bold.woff2') format('woff2'),
+        url('DePixel-Bold.woff') format('woff'),
+        url('DePixel-Bold.ttf') format('truetype'),
+        url('DePixel-Bold.svg#DePixel-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-BreitFett.eot');
+    src: url('DePixel-BreitFett.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-BreitFett.woff2') format('woff2'),
+        url('DePixel-BreitFett.woff') format('woff'),
+        url('DePixel-BreitFett.ttf') format('truetype'),
+        url('DePixel-BreitFett.svg#DePixel-BreitFett') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Klein.eot');
+    src: url('DePixel-Klein.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Klein.woff2') format('woff2'),
+        url('DePixel-Klein.woff') format('woff'),
+        url('DePixel-Klein.ttf') format('truetype'),
+        url('DePixel-Klein.svg#DePixel-Klein') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Schmal.eot');
+    src: url('DePixel-Schmal.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Schmal.woff2') format('woff2'),
+        url('DePixel-Schmal.woff') format('woff'),
+        url('DePixel-Schmal.ttf') format('truetype'),
+        url('DePixel-Schmal.svg#DePixel-Schmal') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Klein_1.eot');
+    src: url('DePixel-Klein_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Klein_1.woff2') format('woff2'),
+        url('DePixel-Klein_1.woff') format('woff'),
+        url('DePixel-Klein_1.ttf') format('truetype'),
+        url('DePixel-Klein_1.svg#DePixel-Klein') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Schmal_1.eot');
+    src: url('DePixel-Schmal_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Schmal_1.woff2') format('woff2'),
+        url('DePixel-Schmal_1.woff') format('woff'),
+        url('DePixel-Schmal_1.ttf') format('truetype'),
+        url('DePixel-Schmal_1.svg#DePixel-Schmal') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Bold_1.eot');
+    src: url('DePixel-Bold_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Bold_1.woff2') format('woff2'),
+        url('DePixel-Bold_1.woff') format('woff'),
+        url('DePixel-Bold_1.ttf') format('truetype'),
+        url('DePixel-Bold_1.svg#DePixel-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Breit.eot');
+    src: url('DePixel-Breit.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Breit.woff2') format('woff2'),
+        url('DePixel-Breit.woff') format('woff'),
+        url('DePixel-Breit.ttf') format('truetype'),
+        url('DePixel-Breit.svg#DePixel-Breit') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Illegible.eot');
+    src: url('DePixel-Illegible.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Illegible.woff2') format('woff2'),
+        url('DePixel-Illegible.woff') format('woff'),
+        url('DePixel-Illegible.ttf') format('truetype'),
+        url('DePixel-Illegible.svg#DePixel-Illegible') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-BreitFett_1.eot');
+    src: url('DePixel-BreitFett_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-BreitFett_1.woff2') format('woff2'),
+        url('DePixel-BreitFett_1.woff') format('woff'),
+        url('DePixel-BreitFett_1.ttf') format('truetype'),
+        url('DePixel-BreitFett_1.svg#DePixel-BreitFett') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Breit_1.eot');
+    src: url('DePixel-Breit_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Breit_1.woff2') format('woff2'),
+        url('DePixel-Breit_1.woff') format('woff'),
+        url('DePixel-Breit_1.ttf') format('truetype'),
+        url('DePixel-Breit_1.svg#DePixel-Breit') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DePixel';
+    src: url('DePixel-Illegible_1.eot');
+    src: url('DePixel-Illegible_1.eot?#iefix') format('embedded-opentype'),
+        url('DePixel-Illegible_1.woff2') format('woff2'),
+        url('DePixel-Illegible_1.woff') format('woff'),
+        url('DePixel-Illegible_1.ttf') format('truetype'),
+        url('DePixel-Illegible_1.svg#DePixel-Illegible') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
