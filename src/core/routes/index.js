@@ -6,7 +6,7 @@ const startRoutes = (app) => {
 
     app.get('/', (req, res) => {
       const viewPath = path.join(__dirname, '..', 'public', 'index.html');
-      res.status(400).sendFile(viewPath);
+      res.status(200).sendFile(viewPath);
     }),
 
   ]
