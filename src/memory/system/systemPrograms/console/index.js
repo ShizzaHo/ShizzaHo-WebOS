@@ -1,4 +1,4 @@
-class System_ShizzaHo_Console {
+new class System_ShizzaHo_Console {
   constructor() {
     this.main();
   }
@@ -31,7 +31,9 @@ class System_ShizzaHo_Console {
     consoleOutput('del - Delete the selected file');
     consoleOutput('read - Read the contents of the file');
     consoleOutput('================');
-    //consoleOutput('run - Runs the selected program, you must specify the path to the program');
+    consoleOutput('=[ APPLICATIONS ]=');
+    consoleOutput('run - Runs the selected program, you must specify the path to the program');
+    consoleOutput('==================');
     this.main();
   }
 
@@ -98,6 +100,16 @@ class System_ShizzaHo_Console {
     this.main();
   }
 
+  async run(path) {
+    const appPath = openPath + "\\" + path;
+    if (await getFileExists(appPath+"\\index.js") == "true") {
+      runProgram(appPath);
+    } else {
+      consoleOutput(`application ${path} does not exist`);
+      this.main();
+    }
+  }
+
   commandNotExist() {
     consoleOutput('The command does not exist');
     this.main();
@@ -127,6 +139,9 @@ class System_ShizzaHo_Console {
       case "new":
         this.new(commandSplit[1], commandSplit[2], commandSplit[3]);
         break;
+      case "run":
+        this.run(commandSplit[1]);
+        break;
       default:
         this.commandNotExist();
         break;
@@ -135,5 +150,3 @@ class System_ShizzaHo_Console {
 
   
 }
-
-runProgramScript(System_ShizzaHo_Console);

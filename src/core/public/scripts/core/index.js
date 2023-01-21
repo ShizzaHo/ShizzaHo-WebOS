@@ -1,6 +1,7 @@
 /* Global system variables */
 
 let openPath = undefined;
+let systemPath = undefined;
 
 /* ----------------------- */
 
@@ -12,20 +13,12 @@ const connectModule = (path) => {
   document.head.appendChild(script);
 };
 
-const runProgram = (path) => {
-  const runned = document.getElementById('runnedProgramScript');
-  if (runned != null) {
-    document.head.removeChild(runned);
-  }
-
-  const runnedProgramScript = document.createElement('script');
-  runnedProgramScript.src = path;
-  runnedProgramScript.id = 'runnedProgramScript';
-  document.head.appendChild(runnedProgramScript);
+const runProgram = async (path) => {
+  eval(await readFile(path + "//index.js"));
 };
 
-const runProgramScript = (programObject) => {
-  return new programObject();
+const stopProgram = () => {
+  runProgram(systemPath + '\\systemPrograms\\console');
 };
 
 const getMemoryPath = async (path) => {
@@ -73,13 +66,6 @@ const newFile = async (name, text, type, path) => {
 /* Modules connected by the system */
 
 connectModule('/core/public/scripts/core/console/index.js');
+connectModule('/core/public/scripts/core/hello/index.js');
 
 /* -------------------------------- */
-
-/* Autorun program */
-
-onload = () => {
-  runProgram('/core/public/scripts/core/systemPrograms/hello/index.js');
-};
-
-/* --------------- */
