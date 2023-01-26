@@ -1,5 +1,4 @@
 * {
-  background-color: black;
   /* cursor: none; */
   color: white;
   margin: 0;
@@ -10,6 +9,10 @@
   font-size: 14px;
   font-weight: 600;
   font-style: normal;
+}
+
+body, input {
+  background-color: black;
 }
 
 .console__inputContainer {

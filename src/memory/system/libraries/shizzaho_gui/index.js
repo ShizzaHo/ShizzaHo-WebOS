@@ -1,4 +1,9 @@
-return library = {
+// ? NAME: ShizzaHo GUI
+// ? AUTHOR: ShizzaHo
+// ? VERSION: 2.0
+// ? URL: -
+
+return {
   start: async (callback) => {
     document.body.innerHTML = "";
 
@@ -19,10 +24,10 @@ return library = {
   stop: () => {
     document.getElementsByClassName("ShizzaHo_Gui_Container")[0].remove();
   },
-  addBlock: (name, layoutType , block = "ShizzaHo_Gui_Container") => {
+  addBlock: (settings) => { // name, layoutType, block
     const blockDiv = document.createElement('div');
-    blockDiv.classList.add(name);
-    switch(layoutType){
+    blockDiv.classList.add(settings.name);
+    switch(settings.layoutType){
       case "horizontalFull":
         blockDiv.classList.add("ShizzaHo_Gui_HorizontalFull");
         break;
@@ -38,31 +43,58 @@ return library = {
       default:
         break;
     }
-    document.getElementsByClassName(block)[0].appendChild(blockDiv);
+    document.getElementsByClassName(settings.block || "ShizzaHo_Gui_Container")[0].appendChild(blockDiv);
 
     return blockDiv;
   },
-  addText: (textContent, color, block = "ShizzaHo_Gui_Container") => {
+  addText: (settings) => { // text, color, block, multiline
     const text = document.createElement('span');
-    text.textContent = textContent;
-    text.style.color = color;
-    document.getElementsByClassName(block)[0].appendChild(text);
+    if (settings.multiline === true) {
+      text.style.whiteSpace = "pre-wrap";
+    }
+    text.textContent = settings.text;
+    text.style.color = settings.color;
+    document.getElementsByClassName(settings.block || "ShizzaHo_Gui_Container")[0].appendChild(text);
 
     return text;
   },
-  addSeparator: (block = "ShizzaHo_Gui_Container") => {
+  addSeparator: (settings) => { // block
     const separator = document.createElement('br');
-    document.getElementsByClassName(block)[0].appendChild(separator);
+    document.getElementsByClassName(settings.block || "ShizzaHo_Gui_Container")[0].appendChild(separator);
 
     return separator;
   },
-  addButton: (text, callback, block = "ShizzaHo_Gui_Container") => {
+  addButton: (settings) => { // text, block, callback
     const button = document.createElement('button');
-    button.textContent = text;
+    button.textContent = settings.text;
     button.classList.add("ShizzaHo_Gui_Button");
-    button.onclick = ()=>{callback(button)};
-    document.getElementsByClassName(block)[0].appendChild(button);
+    button.onclick = ()=>{settings.callback(button)};
+    document.getElementsByClassName(settings.block || "ShizzaHo_Gui_Container")[0].appendChild(button);
 
     return button;
+  },
+
+  editStyle: (element, param, value) => { 
+    switch (param) {
+      case "background":
+        element.style.background = value;
+        break;
+      case "color":
+        element.style.color = value;
+        break;
+      case "textAlign":
+        element.style.textAlign = value;
+        break;
+      default:
+        break;
+    }
+  },
+  clear: (settings) => { // block
+    if (settings.block != undefined) {
+      settings.block.innerHTML = "";
+    } else {
+      document.getElementsByClassName("ShizzaHo_Gui_Container")[0].innerHTML = "";
+    }
+    
   },
 }

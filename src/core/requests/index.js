@@ -48,9 +48,9 @@ const startRequests = async (app) => {
     }),
     app.get('/fileapi/newFile', async (req, res) => {
       if (req.query.type == "folder") {
-        fs.mkdirSync(req.query.path+"/"+req.query.name, req.query.text);
+        fs.mkdirSync(req.query.path+"/"+req.query.name);
       } else if (req.query.type == "file") {
-        fs.appendFile(req.query.path+"/"+req.query.name, req.query.text);
+        fs.writeFileSync(req.query.path+"/"+req.query.name, req.query.text);
       }
       res.status(200);
     }),
