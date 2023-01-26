@@ -7,17 +7,17 @@ new class System_ShizzaHo_Hello {
     const init = await this.init();
 
     if (await init) {
-      consoleOutput('ShizzaHo WebOS l Version: 0.1.0 l Author: ShizzaHo');
+      consoleOutput('ShizzaHo WebOS l Version: 0.1.1 l Author: ShizzaHo');
       consoleOutput('---');
       consoleOutput('This is just a semblance of a real OS, the author is having fun by creating this project');
       consoleOutput('All necessary information is available at the address: https://github.com/ShizzaHo/WebOS');
       consoleOutput('---');
       consoleOutput('Enter the "help" command for help');
-      // runProgram(systemPath + '\\systemPrograms\\console');
+      runProgram(systemPath + '\\systemPrograms\\console');
 
-      setTimeout(()=>{
-        runProgram(openPath + '\\programs\\shizzgo');
-      }, 100)
+      // setTimeout(()=>{
+      //   runProgram(openPath + '\\programs\\shizzgo');
+      // }, 100)
     }
   }
 
