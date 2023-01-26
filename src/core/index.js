@@ -5,4 +5,4 @@ const requests = require('./requests');
 const app = startup.getApp();
 
 routes.startRoutes(app);
-requests.start  (app);
+requests.startRequests(app);

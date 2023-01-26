@@ -10,7 +10,7 @@ new class System_ShizzaHo_Hello {
       consoleOutput('ShizzaHo WebOS l Version: 0.1.0 l Author: ShizzaHo');
       consoleOutput('---');
       consoleOutput('This is just a semblance of a real OS, the author is having fun by creating this project');
-      consoleOutput('All necessary information is available at the address: https://');
+      consoleOutput('All necessary information is available at the address: https://github.com/ShizzaHo/WebOS');
       consoleOutput('---');
       consoleOutput('Enter the "help" command for help');
       runProgram(systemPath + '\\systemPrograms\\console');
@@ -19,7 +19,7 @@ new class System_ShizzaHo_Hello {
 
   async init(){
     openPath = await getMemoryPath();
-    systemPath = await openPath + "\\system";
+    systemPath = await openPath + "/system";
 
     if (await connectLibraries()) {
       return true;
