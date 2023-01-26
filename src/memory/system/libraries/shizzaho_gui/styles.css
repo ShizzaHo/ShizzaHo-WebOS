@@ -1,0 +1,42 @@
+.ShizzaHo_Gui_Container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  color: red;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ShizzaHo_Gui_HorizontalFull {
+  width: 100%;
+}
+
+.ShizzaHo_Gui_VerticalFull {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ShizzaHo_Gui_HorizontalCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ShizzaHo_Gui_VerticalCenter {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ShizzaHo_Gui_Button {
+  background-color: white;
+  color: black;
+  padding: 0px 5px;
+}

@@ -2,6 +2,8 @@
 
 let openPath = undefined;
 let systemPath = undefined;
+let openProgramPath = undefined;
+let libraries = {};
 
 /* ----------------------- */
 
@@ -13,13 +15,31 @@ const connectModule = (path) => {
   document.head.appendChild(script);
 };
 
+const connectLibraries = async () => {
+  const libs = await getDir(systemPath + "/libraries");
+  await libs.result.map((item)=>{
+    connectLibrary(item, systemPath + "/libraries/" + item + "/index.js");
+  })
+  return true;
+};
+
+const connectLibrary = async (name, path) => {
+  libraries[name] = eval('(function() {' + await readFile(path) + '}())');
+};
+
+const getLibrary = (name) => {
+  return libraries[name];
+};
+
 const runProgram = async (path) => {
-  eval(await readFile(path + "//index.js"));
+  openProgramPath = path;
+  eval(await readFile(path + "/index.js"));
 };
 
 const stopProgram = () => {
-  runProgram(systemPath + '\\systemPrograms\\console');
+  runProgram(systemPath + '/systemPrograms/console');
 };
+
 
 const getMemoryPath = async (path) => {
   const response = await fetch(`/fileapi/getMemoryPath`);
