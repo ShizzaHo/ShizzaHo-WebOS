@@ -41,7 +41,7 @@ const stopProgram = () => {
 };
 
 
-const getMemoryPath = async (path) => {
+const getMemoryPath = async () => {
   const response = await fetch(`/fileapi/getMemoryPath`);
   return await response.text();
 };

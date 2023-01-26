@@ -1,4 +1,4 @@
-new class System_ShizzaHo_Startup {
+new class System_ShizzaHo_Hello {
   constructor() {
     this.start();
   }

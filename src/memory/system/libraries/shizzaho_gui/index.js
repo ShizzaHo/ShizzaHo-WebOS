@@ -1,5 +1,4 @@
 return library = {
-  guiContainer: undefined,
   start: async (callback) => {
     document.body.innerHTML = "";
 
