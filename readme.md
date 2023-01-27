@@ -40,6 +40,12 @@ A library, as opposed to programs, works quite differently: a library in **Shizz
 
 There are also two methods **start** and **stop**, they are necessary for developers who will use the library in their programs, the **start** method will act as a constructor that will perform the actions required of your library, the **stop** method is necessary to complete your library.
 
+## Screenshots
+
+![image](docs/screen_1.png)
+
+![image](docs/screen_2.png)
+
 ## Other
 
 [System commands](docs/en/system_command.md)

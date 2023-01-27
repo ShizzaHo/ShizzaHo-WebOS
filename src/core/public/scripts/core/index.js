@@ -9,6 +9,18 @@ let libraries = {};
 
 /* System important commands */
 
+const cutPath = (path) => {
+  console.log('====================================');
+  console.log(1);
+  console.log('====================================');
+  const splitPath = path.split("/WebOS/src/memory");
+  if (splitPath[1] == "") {
+    return "/--"
+  } else {
+    return splitPath[1];
+  }
+}
+
 const connectModule = (path) => {
   const script = document.createElement('script');
   script.src = path;

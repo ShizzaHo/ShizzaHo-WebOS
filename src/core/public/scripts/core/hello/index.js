@@ -13,10 +13,10 @@ new class System_ShizzaHo_Hello {
       consoleOutput('All necessary information is available at the address: https://github.com/ShizzaHo/WebOS');
       consoleOutput('---');
       consoleOutput('Enter the "help" command for help');
-      runProgram(systemPath + '\\systemPrograms\\console');
+      runProgram(systemPath + '/systemPrograms/console');
 
       // setTimeout(()=>{
-      //   runProgram(openPath + '\\programs\\shizzgo');
+      //   runProgram(openPath + '/programs/shizzgo');
       // }, 100)
     }
   }

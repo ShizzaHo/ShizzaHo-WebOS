@@ -4,7 +4,7 @@ new class Application_ShizzaHo_ShizzGo {
   openFile = undefined;
 
   cutPath = (path) => {
-    const splitPath = openPath.split("\\WebOS\\src\\memory\\");
+    const splitPath = openPath.split("/WebOS/src/memory/");
     if (splitPath[1] == undefined) {
       return "/"
     } else {
@@ -13,10 +13,10 @@ new class Application_ShizzaHo_ShizzGo {
   }
 
   back = () => {
-    const splitedPath = openPath.split("\\");
+    const splitedPath = openPath.split("/");
     if (splitedPath[splitedPath.length-1] != "memory") {
       splitedPath[splitedPath.length-1] = undefined;
-      const newPath = splitedPath.join("\\");
+      const newPath = splitedPath.join("/");
       openPath = newPath.substring(0, newPath.length - 1);
     } else {
       consoleOutput(`You are in the root directory of the file system`);
@@ -33,7 +33,7 @@ new class Application_ShizzaHo_ShizzGo {
       this.drawDir(openPath);
     },
     open: async (fileName) => {
-      const path = openPath + "\\" + fileName;
+      const path = openPath + "/" + fileName;
       console.log(await getFileExists(path));
 
       if (await getFileExists(path) != "false") {
@@ -68,8 +68,8 @@ new class Application_ShizzaHo_ShizzGo {
         this.gui.stop();
         consoleInput(`[${this.openFile}] Are you sure you want to delete this file?  (Y/N)`, async (name)=>{
           if (name == "Y" || name == "y") {
-            if (await getFileExists(openPath + "\\" + this.openFile) == "true") {
-              deleteFile(openPath + "\\" + this.openFile);
+            if (await getFileExists(openPath + "/" + this.openFile) == "true") {
+              deleteFile(openPath + "/" + this.openFile);
               this.back();
               this.gui.start(() => {
                 this.start();
@@ -112,7 +112,7 @@ new class Application_ShizzaHo_ShizzGo {
       }
     },
     runprogram: async ()=>{
-      if (await getFileExists(openPath+"\\index.js") == "true") {
+      if (await getFileExists(openPath+"/index.js") == "true") {
         this.gui.stop();
         stopProgram();
         runProgram(openPath);

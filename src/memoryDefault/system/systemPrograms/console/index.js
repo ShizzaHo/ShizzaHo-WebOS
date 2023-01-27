@@ -4,15 +4,6 @@ new class System_ShizzaHo_Console {
   }
 
   main() {
-    const cutPath = (path) => {
-      const splitPath = openPath.split("\\WebOS\\src\\memory\\");
-      if (splitPath[1] == undefined) {
-        return "/"
-      } else {
-        return "/"+splitPath[1];
-      }
-    }
-
     consoleInput(`[${cutPath(openPath)}] Enter the command`, (text)=>{this.checkCommand(text)});
   }
 
@@ -46,7 +37,7 @@ new class System_ShizzaHo_Console {
   }
 
   async go(path) {
-    const newPath = openPath + "\\" + path;
+    const newPath = openPath + path;
     if (await getDirExists(newPath) == "true") {
       openPath = newPath;
     } else {
@@ -57,10 +48,10 @@ new class System_ShizzaHo_Console {
   }
 
   async back(path) {
-    const splitedPath = openPath.split("\\");
+    const splitedPath = openPath.split("/");
     if (splitedPath[splitedPath.length-1] != "memory") {
       splitedPath[splitedPath.length-1] = undefined;
-      const newPath = splitedPath.join("\\");
+      const newPath = splitedPath.join("/");
       openPath = newPath.substring(0, newPath.length - 1);
     } else {
       consoleOutput(`You are in the root directory of the file system`);
@@ -70,7 +61,7 @@ new class System_ShizzaHo_Console {
   }
 
   async read(path) {
-    const readPath = openPath + "\\" + path;
+    const readPath = openPath + "/" + path;
     if (await getFileExists(readPath) == "true") {
       consoleOutput(await readFile(readPath));
     } else {
@@ -81,7 +72,7 @@ new class System_ShizzaHo_Console {
   }
 
   async del(path) {
-    const readPath = openPath + "\\" + path;
+    const readPath = openPath + "/" + path;
     if (await getFileExists(readPath) == "true") {
       deleteFile(readPath);
       consoleOutput(`File/directory ${path} deleted`);
@@ -102,8 +93,8 @@ new class System_ShizzaHo_Console {
   }
 
   async run(path) {
-    const appPath = openPath + "\\" + path;
-    if (await getFileExists(appPath+"\\index.js") == "true") {
+    const appPath = openPath + "/" + path;
+    if (await getFileExists(appPath+"/index.js") == "true") {
       runProgram(appPath);
     } else {
       consoleOutput(`application ${path} does not exist`);

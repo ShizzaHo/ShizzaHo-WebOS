@@ -6,7 +6,7 @@ const startRequests = async (app) => {
   const routesList = [
 
     app.get('/fileapi/getMemoryPath', async (req, res) => {
-      res.status(200).send(path.join(__dirname, '..', '..', 'memory'));
+      res.status(200).send(path.join(__dirname, '..', '..', 'memory').replaceAll("\\", "/"));
     }),
     app.get('/fileapi/getDir', async (req, res) => {
       fs.readdir(req.query.path, (err, files) => {
