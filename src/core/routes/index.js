@@ -1,17 +1,14 @@
 const path = require('path');
-const app = undefined;
+const clc = require("cli-color");
 
 const startRoutes = (app) => {
-  const routesList = [
-
-    app.get('/', (req, res) => {
-      const viewPath = path.join(__dirname, '..', 'public', 'index.html');
-      res.status(200).sendFile(viewPath);
-    }),
-
-  ]
-
-  return routesList;
+  console.log(`${clc.green("ROUTES")} | Loading routes...`)
+  app.get('/', (req, res) => {
+    console.log(`${clc.green("ROUTES")} ${clc.black.bgWhite("/")} | Someone comes in.`)
+    const viewPath = path.join(__dirname, '..', 'public', 'index.html');
+    res.status(200).sendFile(viewPath);
+  })
+  console.log(`${clc.green("ROUTES")} | Routes loaded!`)
 };
 
 module.exports = {

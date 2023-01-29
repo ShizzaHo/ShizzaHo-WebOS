@@ -14,10 +14,6 @@ new class System_ShizzaHo_Hello {
       consoleOutput('---');
       consoleOutput('Enter the "help" command for help');
       runProgram(systemPath + '/systemPrograms/console');
-
-      // setTimeout(()=>{
-      //   runProgram(openPath + '/programs/shizzgo');
-      // }, 100)
     }
   }
 

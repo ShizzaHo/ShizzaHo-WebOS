@@ -93,6 +93,11 @@ const newFile = async (name, text, type, path) => {
   return null;
 };
 
+// const newZip = async (pathDir, pathExport, name) => {
+//   await fetch(`/fileapi/newZip?name=${name}&pathDir=${pathDir}&pathExport=${pathExport}`);
+//   return null;
+// };
+
 /* ------------------------- */
 
 /* Modules connected by the system */

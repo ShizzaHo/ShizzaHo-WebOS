@@ -1,4 +1,5 @@
 const path = require('path');
+const clc = require("cli-color");
 
 const express = require('express');
 const app = express();
@@ -7,8 +8,8 @@ const port = process.argv[2] || 3000;
 app.use("/core/public", express.static(path.join(__dirname, '..', 'public')));
 
 
-app.listen(port, () => {
-  console.log(`STARTUP | Launched by port ${port}`)
+app.listen(port, (err) => {
+  console.log(`${clc.green("STARTUP")} | Launched by port ${clc.yellow.underline(port)}`)
 })
 
 const getApp = () => {
