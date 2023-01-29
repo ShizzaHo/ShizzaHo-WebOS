@@ -2,6 +2,18 @@
 
 **The system is just a parody of the real OS, it's just a toy for the developer :)**
 
+## System startup
+
+Make sure you have NodeJS installed on your PC before starting the system
+
+Also remember to install dependencies: ``npm install``
+
+Start the system in normal mode: ``npm start``
+
+Start the system in developer mode: ``npm run dev``
+
+After startup you can go to the system, it opens at [http://localhost:3000](http://localhost:3000)
+
 ## System operation
 
 All the low level stuff is in the **core** folder, the exception is the **public** folder, where the high level is.
@@ -20,7 +32,7 @@ The program for **ShizzaHo WebOS** is located in an ordinary JS file, but in ord
 
 * the program is always written in ES6+ Class, this is a system condition that must be respected.
 * When the program starts, it must create an instance of its class.
-* The name of the class is written in the following format: ``SystemStatus_Author_Name'', for example: ``System_ShizzaHo_Hello``, this is not mandatory, but recommended for characterizing programs.
+* The name of the class is written in the following format: ``SystemStatus_Author_Name``, for example: ``System_ShizzaHo_Hello``, this is not mandatory, but recommended for characterizing programs.
 
 Launching the system sets a new value for the variable **openProgramPath**, you can use this to connect other scripts or launch another program from a directory, the example program is in the standard system package, you can find the program by the path **memory/dev/simple_app/index.js**
 
