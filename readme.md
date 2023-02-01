@@ -14,6 +14,8 @@ Start the system in developer mode: ``npm run dev``
 
 After startup you can go to the system, it opens at [http://localhost:3000](http://localhost:3000)
 
+Optionally you can add a port with a space, the default port will be 3000
+
 ## System operation
 
 All the low level stuff is in the **core** folder, the exception is the **public** folder, where the high level is.

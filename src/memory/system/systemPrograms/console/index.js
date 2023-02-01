@@ -22,17 +22,18 @@ new class System_ShizzaHo_Console {
     consoleOutput('help - Shows help, available commands and their descriptions');
     consoleOutput('=================');
     consoleOutput('=[ NAVIGATION ]=');
-    consoleOutput('go - Opens the entered directory');
+    consoleOutput('go %PATH% - Opens the entered directory');
     consoleOutput('back - Go back to the directory');
     consoleOutput('================');
     consoleOutput('=[ FILE SYSTEM ]=');
     consoleOutput('dir - Show the contents of the open directory');
-    consoleOutput('new - Create a new file/directory');
-    consoleOutput('del - Delete the selected file');
-    consoleOutput('read - Read the contents of the file');
+    consoleOutput('new %FILE_NAME% %TEXT% %TYPE_(Folder/File)% - Create a new file/directory');
+    consoleOutput('del %PATH% - Delete the selected file');
+    consoleOutput('rename %PATH% %NEW_PATH% - rename the file');
+    consoleOutput('read %PATH% - Read the contents of the file');
     consoleOutput('================');
     consoleOutput('=[ APPLICATIONS ]=');
-    consoleOutput('run - Runs the selected program, you must specify the path to the program');
+    consoleOutput('run %PATH% - Runs the selected program, you must specify the path to the program');
     consoleOutput('==================');
     this.main();
   }
@@ -100,6 +101,7 @@ new class System_ShizzaHo_Console {
     newFile(name, text, type, openPath);
     this.main();
   }
+  
 
   async run(path) {
     const appPath = openPath + "/" + path;
@@ -109,6 +111,11 @@ new class System_ShizzaHo_Console {
       consoleOutput(`application ${path} does not exist`);
       this.main();
     }
+  }
+
+  async rename(path, newPath) {
+    rename(openPath + "/" + path, openPath + "/" + newPath);
+    this.main();
   }
 
   commandNotExist() {
@@ -142,6 +149,9 @@ new class System_ShizzaHo_Console {
         break;
       case "run":
         this.run(commandSplit[1]);
+        break;
+      case "rename":
+        this.rename(commandSplit[1], commandSplit[2]);
         break;
       default:
         this.commandNotExist();

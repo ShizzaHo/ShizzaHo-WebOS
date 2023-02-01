@@ -85,6 +85,14 @@ const load = (app) => {
     res.status(200);
   })
 
+  app.get('/fileapi/rename', async (req, res) => {
+    console.log(`${clc.green("REQUESTS")} ${clc.black.bgWhite("rename")} | A request came in`)
+
+    fs.renameSync(req.query.path, req.query.newPath);
+
+    res.status(200);
+  })
+
   console.log(`${clc.green("REQUESTS")} ${clc.black.bgWhite("FILE API")} | FileApi is loaded!`)
 
 };

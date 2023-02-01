@@ -9,7 +9,7 @@ app.use("/core/public", express.static(path.join(__dirname, '..', 'public')));
 
 
 app.listen(port, (err) => {
-  console.log(`${clc.green("STARTUP")} | Launched by port ${clc.yellow.underline(port)}`)
+  console.log(`${clc.green("STARTUP")} | Launched by ${clc.yellow.underline("http://localhost:"+port)}`)
 })
 
 const getApp = () => {
