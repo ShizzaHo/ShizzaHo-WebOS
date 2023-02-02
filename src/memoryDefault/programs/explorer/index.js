@@ -1,16 +1,7 @@
-new class Application_ShizzaHo_ShizzGo {
+new class Application_ShizzaHo_Explorer {
   gui = getLibrary('shizzaho_gui');
   guiObj = {}
   openFile = undefined;
-
-  cutPath = (path) => {
-    const splitPath = openPath.split("/WebOS/src/memory/");
-    if (splitPath[1] == undefined) {
-      return "/"
-    } else {
-      return "/"+splitPath[1];
-    }
-  }
 
   back = () => {
     const splitedPath = openPath.split("/");
@@ -88,7 +79,7 @@ new class Application_ShizzaHo_ShizzGo {
       }
     },
     deletefolder: ()=>{
-      if (this.cutPath(openPath) != "/") {
+      if (cutPath(openPath) != "/") {
         this.gui.stop();
         consoleInput(`[${this.cutPath(openPath)}] Are you sure you want to delete this directory?  (Y/N)`, async (name)=>{
           if (name == "Y" || name == "y") {
@@ -114,7 +105,6 @@ new class Application_ShizzaHo_ShizzGo {
     runprogram: async ()=>{
       if (await getFileExists(openPath+"/index.js") == "true") {
         this.gui.stop();
-        stopProgram();
         runProgram(openPath);
       }
     }
@@ -129,8 +119,8 @@ new class Application_ShizzaHo_ShizzGo {
   start() {
     this.openFile = undefined;
 
-    this.guiObj.shizzgo = this.gui.addBlock({name: "shizzgo", layoutType: "verticalFull"});
-    this.gui.editStyle(this.guiObj.shizzgo, "background", "blue");
+    this.guiObj.explorer = this.gui.addBlock({name: "explorer", layoutType: "verticalFull"});
+    this.gui.editStyle(this.guiObj.explorer, "background", "blue");
     this.gui.addBlock({name: "control-panel", layoutType: "horizontalFull"});
 
     this.gui.addButton({text: "log off", block: "control-panel", callback: this.callbacks.logoff});
@@ -149,9 +139,9 @@ new class Application_ShizzaHo_ShizzGo {
   }
 
   async drawDir(path){
-    this.gui.clear({block: this.guiObj.shizzgo});
+    this.gui.clear({block: this.guiObj.explorer});
 
-    const obj = this.gui.addButton({text: `<-- back`, block: "shizzgo", callback: this.callbacks.back});
+    const obj = this.gui.addButton({text: `<-- back`, block: "explorer", callback: this.callbacks.back});
     this.gui.editStyle(obj, "background", "black");
     this.gui.editStyle(obj, "color", "yellow");
     this.gui.editStyle(obj, "textAlign", "start");
@@ -159,7 +149,7 @@ new class Application_ShizzaHo_ShizzGo {
     const dir = await getDir(path);
     if(await dir.result != undefined){
       dir.result.map((item, index)=>{
-        const obj = this.gui.addButton({text: `${index + 1}. ${item}`, block: "shizzgo", callback: ()=>{this.callbacks.open(item)}});
+        const obj = this.gui.addButton({text: `${index + 1}. ${item}`, block: "explorer", callback: ()=>{this.callbacks.open(item)}});
         this.gui.editStyle(obj, "background", "transparent");
         this.gui.editStyle(obj, "color", "white");
         this.gui.editStyle(obj, "textAlign", "start");
@@ -168,14 +158,14 @@ new class Application_ShizzaHo_ShizzGo {
   }
 
   readFile(fileName, fileContent){
-    this.gui.clear({block: this.guiObj.shizzgo});
+    this.gui.clear({block: this.guiObj.explorer});
 
-    const obj = this.gui.addButton({text: `<-- back`, block: "shizzgo", callback: this.callbacks.back});
+    const obj = this.gui.addButton({text: `<-- back`, block: "explorer", callback: this.callbacks.back});
     this.gui.editStyle(obj, "background", "black");
     this.gui.editStyle(obj, "color", "yellow");
     this.gui.editStyle(obj, "textAlign", "start");
     
-    this.gui.addText({text: fileContent, block: "shizzgo", multiline: true});
+    this.gui.addText({text: fileContent, block: "explorer", multiline: true});
 
     this.openFile = fileName;
   }

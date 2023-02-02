@@ -1,4 +1,4 @@
-return library = {
+return {
   start: () => {
     consoleOutput("Simple library started");
   },

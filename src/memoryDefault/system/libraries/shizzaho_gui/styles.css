@@ -11,12 +11,14 @@
 
 .ShizzaHo_Gui_HorizontalFull {
   width: 100%;
+  overflow-y: scroll;
 }
 
 .ShizzaHo_Gui_VerticalFull {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .ShizzaHo_Gui_HorizontalCenter {
@@ -25,6 +27,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  overflow-y: scroll;
 }
 
 .ShizzaHo_Gui_VerticalCenter {
@@ -33,10 +36,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .ShizzaHo_Gui_Button {
   background-color: white;
   color: black;
   padding: 0px 5px;
+  border: none;
 }
