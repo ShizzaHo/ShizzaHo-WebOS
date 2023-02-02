@@ -13,7 +13,14 @@ new class System_ShizzaHo_Hello {
       consoleOutput('All necessary information is available at the address: https://github.com/ShizzaHo/WebOS');
       consoleOutput('---');
       consoleOutput('Enter the "help" command for help');
-      runProgram(systemPath + '/systemPrograms/console');
+
+      const config = await getConfig();
+      
+      if (config.startAppPath == "") {
+        runProgram(systemPath + '/systemPrograms/console');
+      } else {
+        runProgram(openPath + config.startAppPath);
+      }
     }
   }
 

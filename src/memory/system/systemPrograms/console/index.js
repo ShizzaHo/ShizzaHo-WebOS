@@ -35,6 +35,9 @@ new class System_ShizzaHo_Console {
     consoleOutput('=[ APPLICATIONS ]=');
     consoleOutput('run %PATH% - Runs the selected program, you must specify the path to the program');
     consoleOutput('==================');
+    consoleOutput('=[ SYSTEM MANAGEMENT ]=');
+    consoleOutput('setconfig %param% %value% - Change the system configuration value');
+    consoleOutput('=======================');
     this.main();
   }
 
@@ -118,6 +121,13 @@ new class System_ShizzaHo_Console {
     this.main();
   }
 
+  async setConfig(param, value) {
+    let newConfig = {};
+    newConfig[param] = value
+    setConfig(newConfig);
+    this.main();
+  }
+
   commandNotExist() {
     consoleOutput('The command does not exist');
     this.main();
@@ -152,6 +162,9 @@ new class System_ShizzaHo_Console {
         break;
       case "rename":
         this.rename(commandSplit[1], commandSplit[2]);
+        break;
+      case "setconfig":
+        this.setConfig(commandSplit[1], commandSplit[2]);
         break;
       default:
         this.commandNotExist();

@@ -24,6 +24,18 @@ const connectModule = (path) => {
   document.head.appendChild(script);
 };
 
+const getConfig = async () => {
+  const openPathLocal = await getMemoryPath();
+
+  return JSON.parse(await readFile(await openPathLocal + "/system/config.json"));
+};
+
+const setConfig = async (newParams) => {
+  const openPathLocal = await getMemoryPath();
+  const config = await getConfig();
+  newFile("/system/config.json", JSON.stringify({...config, ...newParams}), "file", await openPathLocal);
+};
+
 /* ------------------------- */
 
 /* Modules connected by the system */

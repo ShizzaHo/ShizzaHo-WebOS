@@ -39,6 +39,6 @@ const newFile = async (name, text, type, path) => {
 };
 
 const rename = async (path, newPath) => {
-  await fetch(`/fileapi/rename?&path=${path}&newPath=${newPath}`);
+  await fetch(`/fileapi/rename?&path=${path}&newName=${newPath}`);
   return null;
 };

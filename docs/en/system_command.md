@@ -14,6 +14,10 @@ Commands in the system are divided into two levels:
 
 ``connectLibrary(name, path)`` - Connects a library to the system
 
+``getConfig()`` - Gets the system config as an object
+
+``setConfig(newParams)`` - Writes new data into the system config
+
 ## Commands not affecting the internal work of the system
 
 ``getLibrary(name)`` Gets methods from the library to use in the program
@@ -37,3 +41,5 @@ RunProgram(path)`` Starts the program
 ``deleteFolder(path)`` - Deletes a folder
 
 ``newFile(name, text, type, path)`` - Creates a directory or file
+
+``rename(path, newPath)`` - Renames a directory or file
